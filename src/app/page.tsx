@@ -15,6 +15,7 @@ export default function Home() {
   const [treeData, setTreeData] = useState<TreeNode | null>(null);
   const [filteredData, setFilteredData] = useState<TreeNode | null>(null);
   const [selectedNode, setSelectedNode] = useState<any>(null);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -38,7 +39,12 @@ export default function Home() {
   };
 
   const handleNodeClick = (nodeData: any) => {
-    setSelectedNode(nodeData);
+    if (isSidebarOpen && selectedNode && selectedNode.__rd3t.id === nodeData.__rd3t.id) {
+      setIsSidebarOpen(false);
+    } else {
+      setSelectedNode(nodeData);
+      setIsSidebarOpen(true);
+    }
   };
 
   if (loading) {
@@ -90,12 +96,34 @@ export default function Home() {
         </main>
 
         {/* Node Details Sidebar */}
-        {selectedNode && (
+        {isSidebarOpen && selectedNode && (
           <aside className="w-80 bg-gray-50 dark:bg-gray-900 border-l border-gray-200 dark:border-gray-800 p-6">
-            <div className="space-y-4">
+            <div className="flex justify-between items-center mb-4">
               <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
                 Node Details
               </h2>
+              <button
+                onClick={() => setIsSidebarOpen(false)}
+                className="p-1 rounded-full text-gray-500 hover:bg-gray-200 dark:text-gray-400 dark:hover:bg-gray-700"
+                aria-label="Close node details"
+              >
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div className="space-y-4">
               <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700">
                 <h3 className="font-medium text-gray-900 dark:text-white mb-2">
                   {selectedNode.name}

@@ -44,8 +44,8 @@ export function TreeVisualization({ filteredData, onNodeClick }: TreeVisualizati
         };
         setDimensions(newDimensions);
         setTranslate({
-          x: newDimensions.width / 2,
-          y: 100,
+          x: 100,
+          y: newDimensions.height / 2,
         });
       }
     };
@@ -91,7 +91,8 @@ export function TreeVisualization({ filteredData, onNodeClick }: TreeVisualizati
           fill={theme === "dark" ? "#f9fafb" : "#111827"}
           strokeWidth="0"
           fontSize="11"
-          textAnchor="middle"
+          textAnchor="start"
+          x={hasChildren ? 25 : 20}
           dy="0.35em"
           style={{ pointerEvents: "none", fontWeight: "500" }}
         >
@@ -107,18 +108,14 @@ export function TreeVisualization({ filteredData, onNodeClick }: TreeVisualizati
   };
 
   return (
-    <div
-      ref={containerRef}
-      className="w-full h-full bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden"
-    >
+    <div ref={containerRef} className="w-full h-full">
       {dimensions.width > 0 && dimensions.height > 0 && (
         <Tree
           data={filteredData}
           translate={translate}
+          orientation="horizontal"
           nodeSize={nodeSize}
           separation={separation}
-          orientation="vertical"
-          pathFunc="step"
           renderCustomNodeElement={customNodeElement}
           collapsible={true}
           initialDepth={2}
