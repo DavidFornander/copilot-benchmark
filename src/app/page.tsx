@@ -5,6 +5,7 @@ import { TreeVisualization } from "@/components/tree-visualization";
 import { SearchFilter } from "@/components/search-filter";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { filterTreeData } from "@/lib/tree-filter";
+import { FileText } from "lucide-react";
 
 interface TreeNode {
   name: string;
@@ -16,6 +17,7 @@ export default function Home() {
   const [filteredData, setFilteredData] = useState<TreeNode | null>(null);
   const [selectedNode, setSelectedNode] = useState<any>(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [showFullTree, setShowFullTree] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -39,12 +41,45 @@ export default function Home() {
   };
 
   const handleNodeClick = (nodeData: any) => {
-    if (isSidebarOpen && selectedNode && selectedNode.__rd3t.id === nodeData.__rd3t.id) {
+    if (
+      isSidebarOpen &&
+      selectedNode &&
+      selectedNode.__rd3t.id === nodeData.__rd3t.id &&
+      !showFullTree
+    ) {
       setIsSidebarOpen(false);
     } else {
       setSelectedNode(nodeData);
+      setShowFullTree(false);
       setIsSidebarOpen(true);
     }
+  };
+
+  const handleShowFullTree = () => {
+    setShowFullTree(true);
+    setIsSidebarOpen(true);
+  };
+
+  const levelColors = [
+    "text-sky-500 dark:text-sky-400",
+    "text-emerald-500 dark:text-emerald-400",
+    "text-amber-500 dark:text-amber-400",
+    "text-violet-500 dark:text-violet-400",
+    "text-rose-500 dark:text-rose-400",
+    "text-lime-500 dark:text-lime-400",
+  ];
+
+  const formatTree = (
+    node: TreeNode,
+    level = 0
+  ): { text: string; level: number }[] => {
+    let result = [{ text: node.name, level }];
+    if (node.children) {
+      node.children.forEach((child) => {
+        result = result.concat(formatTree(child, level + 1));
+      });
+    }
+    return result;
   };
 
   if (loading) {
@@ -80,7 +115,14 @@ export default function Home() {
         </div>
       </header>
 
-      <div className="flex h-[calc(100vh-64px)]">
+      <div className="flex h-[calc(100vh-64px)] relative">
+        <button
+          onClick={handleShowFullTree}
+          className="absolute top-6 left-6 z-10 p-2 bg-gray-100 dark:bg-gray-800 rounded-full shadow-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+          aria-label="Show full tree"
+        >
+          <FileText className="w-5 h-5 text-gray-600 dark:text-gray-300" />
+        </button>
         {/* Main Tree Visualization */}
         <main className="flex-1 p-6">
           {filteredData ? (
@@ -96,16 +138,16 @@ export default function Home() {
         </main>
 
         {/* Node Details Sidebar */}
-        {isSidebarOpen && selectedNode && (
-          <aside className="w-80 bg-gray-50 dark:bg-gray-900 border-l border-gray-200 dark:border-gray-800 p-6">
+        {isSidebarOpen && (
+          <aside className="w-80 bg-gray-50 dark:bg-gray-900 border-l border-gray-200 dark:border-gray-800 p-6 overflow-y-auto">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
-                Node Details
+                {showFullTree ? "Full Tree" : "Node Details"}
               </h2>
               <button
                 onClick={() => setIsSidebarOpen(false)}
                 className="p-1 rounded-full text-gray-500 hover:bg-gray-200 dark:text-gray-400 dark:hover:bg-gray-700"
-                aria-label="Close node details"
+                aria-label="Close details"
               >
                 <svg
                   className="w-5 h-5"
@@ -123,45 +165,57 @@ export default function Home() {
                 </svg>
               </button>
             </div>
-            <div className="space-y-4">
-              <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700">
-                <h3 className="font-medium text-gray-900 dark:text-white mb-2">
-                  {selectedNode.name}
-                </h3>
-                <div className="text-sm text-gray-600 dark:text-gray-400">
-                  {selectedNode.children ? (
-                    <div>
-                      <p className="mb-2">
-                        <strong>Type:</strong> Category
+            {showFullTree && treeData ? (
+              <div className="font-mono text-sm">
+                {formatTree(treeData).map((line, index) => (
+                  <div
+                    key={index}
+                    className={levelColors[line.level % levelColors.length]}
+                    style={{ paddingLeft: `${line.level * 1.5}em` }}
+                  >
+                    {line.text}
+                  </div>
+                ))}
+              </div>
+            ) : selectedNode ? (
+              <div className="space-y-4">
+                <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700">
+                  <h3 className="font-medium text-gray-900 dark:text-white mb-2">
+                    {selectedNode.name}
+                  </h3>
+                  <div className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                    {selectedNode.attributes?.type && (
+                      <p>
+                        <strong>Type:</strong> {selectedNode.attributes.type}
                       </p>
-                      <p className="mb-2">
-                        <strong>Sub-items:</strong> {selectedNode.children.length}
+                    )}
+                    {selectedNode.children && (
+                      <p>
+                        <strong>Sub-items:</strong>{" "}
+                        {selectedNode.children.length}
                       </p>
+                    )}
+                    {selectedNode.children && (
                       <div>
                         <strong>Contains:</strong>
-                        <ul className="mt-1 ml-4 list-disc">
-                          {selectedNode.children.slice(0, 5).map((child: any, index: number) => (
-                            <li key={index}>{child.name}</li>
-                          ))}
+                        <ul className="list-disc list-inside pl-2 mt-1">
+                          {selectedNode.children
+                            .slice(0, 5)
+                            .map((child: any, index: number) => (
+                              <li key={index}>{child.name}</li>
+                            ))}
                           {selectedNode.children.length > 5 && (
-                            <li>... and {selectedNode.children.length - 5} more</li>
+                            <li>
+                              ... and {selectedNode.children.length - 5} more
+                            </li>
                           )}
                         </ul>
                       </div>
-                    </div>
-                  ) : (
-                    <div>
-                      <p>
-                        <strong>Type:</strong> Job Role
-                      </p>
-                      <p className="mt-2 text-gray-700 dark:text-gray-300">
-                        Click on category nodes to explore related roles and specializations.
-                      </p>
-                    </div>
-                  )}
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
+            ) : null}
           </aside>
         )}
       </div>

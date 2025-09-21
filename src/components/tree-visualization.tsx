@@ -60,7 +60,7 @@ export function TreeVisualization({ filteredData, onNodeClick }: TreeVisualizati
     };
   }, []);
 
-  const nodeSize = { x: 200, y: 80 };
+  const nodeSize = { x: 350, y: 80 };
   const separation = { siblings: 1, nonSiblings: 2 };
 
   const customNodeElement = ({ nodeDatum, toggleNode }: any) => {
@@ -83,9 +83,8 @@ export function TreeVisualization({ filteredData, onNodeClick }: TreeVisualizati
           strokeWidth="2"
           onClick={() => {
             if (hasChildren && toggleNode) toggleNode();
-            if (onNodeClick) onNodeClick(nodeDatum);
           }}
-          style={{ cursor: "pointer" }}
+          style={{ cursor: hasChildren ? "pointer" : "default" }}
         />
         <text
           fill={theme === "dark" ? "#f9fafb" : "#111827"}
@@ -94,13 +93,16 @@ export function TreeVisualization({ filteredData, onNodeClick }: TreeVisualizati
           textAnchor="start"
           x={hasChildren ? 25 : 20}
           dy="0.35em"
-          style={{ pointerEvents: "none", fontWeight: "500" }}
+          onClick={() => {
+            if (onNodeClick) onNodeClick(nodeDatum);
+          }}
+          style={{ cursor: "pointer", fontWeight: "500" }}
         >
-          {nodeDatum.name.length > 16
-            ? `${nodeDatum.name.substring(0, 16)}...`
+          {nodeDatum.name.length > 46
+            ? `${nodeDatum.name.substring(0, 46)}...`
             : nodeDatum.name}
         </text>
-        {nodeDatum.name.length > 16 && (
+        {nodeDatum.name.length > 46 && (
           <title>{nodeDatum.name}</title>
         )}
       </g>
