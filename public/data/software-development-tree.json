@@ -1,0 +1,91 @@
+{
+  "name": "Software Development",
+  "children": [
+    {
+      "name": "Frontend Development",
+      "children": [
+        { "name": "Frontend Developer" },
+        { "name": "React Developer" },
+        { "name": "Vue.js Developer" },
+        { "name": "Angular Developer" },
+        { "name": "UI/UX Designer" },
+        { "name": "Web Designer" }
+      ]
+    },
+    {
+      "name": "Backend Development",
+      "children": [
+        { "name": "Backend Developer" },
+        { "name": "API Developer" },
+        { "name": "Node.js Developer" },
+        { "name": "Python Developer" },
+        { "name": "Java Developer" },
+        { "name": "C# Developer" },
+        { "name": "PHP Developer" }
+      ]
+    },
+    {
+      "name": "Mobile Development",
+      "children": [
+        { "name": "iOS Developer" },
+        { "name": "Android Developer" },
+        { "name": "React Native Developer" },
+        { "name": "Flutter Developer" },
+        { "name": "Mobile App Designer" }
+      ]
+    },
+    {
+      "name": "DevOps & Infrastructure",
+      "children": [
+        { "name": "DevOps Engineer" },
+        { "name": "Cloud Architect" },
+        { "name": "Site Reliability Engineer" },
+        { "name": "Infrastructure Engineer" },
+        { "name": "Platform Engineer" },
+        { "name": "Systems Administrator" }
+      ]
+    },
+    {
+      "name": "Data & Analytics",
+      "children": [
+        { "name": "Data Scientist" },
+        { "name": "Data Engineer" },
+        { "name": "Data Analyst" },
+        { "name": "Machine Learning Engineer" },
+        { "name": "AI Engineer" },
+        { "name": "Business Intelligence Developer" }
+      ]
+    },
+    {
+      "name": "Quality Assurance",
+      "children": [
+        { "name": "QA Engineer" },
+        { "name": "Test Automation Engineer" },
+        { "name": "Manual Tester" },
+        { "name": "Performance Tester" },
+        { "name": "Security Tester" }
+      ]
+    },
+    {
+      "name": "Product & Management",
+      "children": [
+        { "name": "Product Manager" },
+        { "name": "Technical Product Manager" },
+        { "name": "Project Manager" },
+        { "name": "Scrum Master" },
+        { "name": "Engineering Manager" },
+        { "name": "CTO" }
+      ]
+    },
+    {
+      "name": "Security",
+      "children": [
+        { "name": "Security Engineer" },
+        { "name": "Cybersecurity Specialist" },
+        { "name": "Penetration Tester" },
+        { "name": "Security Architect" },
+        { "name": "Compliance Engineer" }
+      ]
+    }
+  ]
+}
