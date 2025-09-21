@@ -2,89 +2,279 @@
   "name": "Software Development",
   "children": [
     {
-      "name": "Frontend Development",
+      "name": "Web Development",
       "children": [
-        { "name": "Frontend Developer" },
-        { "name": "React Developer" },
-        { "name": "Vue.js Developer" },
-        { "name": "Angular Developer" },
-        { "name": "UI/UX Designer" },
-        { "name": "Web Designer" }
-      ]
-    },
-    {
-      "name": "Backend Development",
-      "children": [
-        { "name": "Backend Developer" },
-        { "name": "API Developer" },
-        { "name": "Node.js Developer" },
-        { "name": "Python Developer" },
-        { "name": "Java Developer" },
-        { "name": "C# Developer" },
-        { "name": "PHP Developer" }
+        { "name": "Front-End Developer" },
+        { "name": "Back-End Developer" },
+        { "name": "Full-Stack Developer" },
+        { "name": "Middle-Tier Developer" },
+        { "name": "Markup Developer" },
+        { "name": "Frontend App Developer" },
+        { "name": "UX/UI Developer" },
+        { "name": "E-commerce Developer" },
+        { "name": "Web Developer" },
+        { "name": "Web Application Security Engineer (WASE)" },
+        { "name": "Accessibility Specialist" },
+        { "name": "Web Performance Engineer" },
+        { "name": "CMS Developer" },
+        { "name": "Progressive Web App (PWA) Developer" },
+        { "name": "Jamstack Developer" },
+        { "name": "Web3 Developer" },
+        { "name": "SEO Developer" }
       ]
     },
     {
       "name": "Mobile Development",
       "children": [
+        { "name": "Mobile Developer" },
+        { "name": "Native Apps Developer" },
         { "name": "iOS Developer" },
         { "name": "Android Developer" },
-        { "name": "React Native Developer" },
-        { "name": "Flutter Developer" },
-        { "name": "Mobile App Designer" }
+        { "name": "Windows Developer" },
+        { "name": "Cross-Platform / Hybrid Apps Developer" },
+        { "name": "Mobile Engineer" },
+        { "name": "Mobile Game Developer" },
+        { "name": "Wearables Developer" },
+        { "name": "Mobile Security Engineer" },
+        { "name": "Mobile UX Designer" },
+        { "name": "App Store Optimization (ASO) Specialist" }
       ]
     },
     {
-      "name": "DevOps & Infrastructure",
+      "name": "Desktop Development",
       "children": [
-        { "name": "DevOps Engineer" },
-        { "name": "Cloud Architect" },
-        { "name": "Site Reliability Engineer" },
-        { "name": "Infrastructure Engineer" },
-        { "name": "Platform Engineer" },
-        { "name": "Systems Administrator" }
+        { "name": "Desktop Developer" },
+        { "name": "Application Developer" },
+        { "name": "Cross-Platform Desktop Developer" },
+        { "name": "Desktop Security Engineer" },
+        { "name": "Desktop Application Architect" },
+        { "name": "System Tray Application Developer" }
       ]
     },
     {
-      "name": "Data & Analytics",
+      "name": "Game Development",
       "children": [
-        { "name": "Data Scientist" },
+        { "name": "Game Developer" },
+        { "name": "Web Game Developer" },
+        { "name": "Mobile Game Developer" },
+        { "name": "Desktop Game Developer" },
+        { "name": "VR Game Developer" },
+        { "name": "Graphic Programmer" },
+        { "name": "Game AI Developer" },
+        { "name": "Game Engine Developer" },
+        { "name": "AR/MR Game Developer" },
+        { "name": "Procedural Content Developer" },
+        { "name": "Multiplayer Networking Engineer" }
+      ]
+    },
+    {
+      "name": "Embedded Systems",
+      "children": [
+        { "name": "Embedded Developer" },
+        { "name": "Embedded Systems Engineer" },
+        { "name": "Firmware Engineer" },
+        { "name": "Robotics Engineer" },
+        { "name": "IoT Developer" },
+        { "name": "Automotive Software Engineer" },
+        { "name": "Real-Time Systems Engineer" },
+        { "name": "Embedded AI Developer" },
+        { "name": "Edge Computing Engineer" }
+      ]
+    },
+    {
+      "name": "Data and Analytics",
+      "children": [
+        { "name": "Database Developer" },
         { "name": "Data Engineer" },
-        { "name": "Data Analyst" },
+        { "name": "Data Scientist/Engineer" },
+        { "name": "Big Data Developer" },
         { "name": "Machine Learning Engineer" },
+        { "name": "Data Visualization Engineer" },
+        { "name": "Data Pipeline Engineer" },
+        { "name": "Business Intelligence (BI) Developer" },
+        { "name": "Data Governance Specialist" },
+        { "name": "DataOps Engineer" }
+      ]
+    },
+    {
+      "name": "Artificial Intelligence",
+      "children": [
         { "name": "AI Engineer" },
-        { "name": "Business Intelligence Developer" }
+        { "name": "Artificial Intelligence (AI) Engineer" },
+        { "name": "Natural Language Processing (NLP) Engineer" },
+        { "name": "Computer Vision Engineer" },
+        { "name": "Reinforcement Learning Engineer" },
+        { "name": "AI Ethics Specialist" },
+        { "name": "AI Product Engineer" },
+        { "name": "Generative AI Engineer" },
+        { "name": "AI Infrastructure Engineer" }
       ]
     },
     {
-      "name": "Quality Assurance",
+      "name": "Cloud Computing",
       "children": [
-        { "name": "QA Engineer" },
-        { "name": "Test Automation Engineer" },
-        { "name": "Manual Tester" },
-        { "name": "Performance Tester" },
-        { "name": "Security Tester" }
+        { "name": "Cloud Developer" },
+        { "name": "Cloud Architect" },
+        { "name": "High-Performance Computing Developer" },
+        { "name": "Cloud Security Engineer" },
+        { "name": "Serverless Developer" },
+        { "name": "Cloud Native Developer" },
+        { "name": "Multi-Cloud Engineer" },
+        { "name": "Cloud Cost Optimization Engineer" }
       ]
     },
     {
-      "name": "Product & Management",
+      "name": "DevOps and Operations",
       "children": [
-        { "name": "Product Manager" },
-        { "name": "Technical Product Manager" },
-        { "name": "Project Manager" },
-        { "name": "Scrum Master" },
-        { "name": "Engineering Manager" },
-        { "name": "CTO" }
+        { "name": "DevOps Developer" },
+        { "name": "DevOps Engineer" },
+        { "name": "Site Reliability Engineer (SRE)" },
+        { "name": "Systems Developer" },
+        { "name": "Systems Engineer" },
+        { "name": "Software Integration Engineer" },
+        { "name": "Infrastructure as Code (IaC) Engineer" },
+        { "name": "Platform Engineer" },
+        { "name": "Build Engineer" },
+        { "name": "GitOps Engineer" },
+        { "name": "Chaos Engineer" }
       ]
     },
     {
       "name": "Security",
       "children": [
+        { "name": "Security Developer" },
         { "name": "Security Engineer" },
-        { "name": "Cybersecurity Specialist" },
+        { "name": "Application Security Engineer" },
         { "name": "Penetration Tester" },
-        { "name": "Security Architect" },
-        { "name": "Compliance Engineer" }
+        { "name": "Threat Intelligence Analyst" },
+        { "name": "Cloud Security Architect" },
+        { "name": "DevSecOps Engineer" },
+        { "name": "Cryptography Engineer" }
+      ]
+    },
+    {
+      "name": "Quality Assurance and Testing",
+      "children": [
+        { "name": "Quality Assurance (QA) Developer" },
+        { "name": "Software Development Engineer in Test (SDET)" },
+        { "name": "Software Engineer in Test (QA Engineer)" },
+        { "name": "Technical Support Engineer" },
+        { "name": "Automation Test Engineer" },
+        { "name": "Performance Test Engineer" },
+        { "name": "Usability Tester" },
+        { "name": "Accessibility Tester" },
+        { "name": "Chaos Testing Engineer" }
+      ]
+    },
+    {
+      "name": "Immersive Technologies",
+      "children": [
+        { "name": "Augmented Reality/Virtual Reality Developer" },
+        { "name": "User Experience (UX) Engineer" },
+        { "name": "Mixed Reality (MR) Developer" },
+        { "name": "3D Interaction Designer" },
+        { "name": "Spatial Computing Developer" },
+        { "name": "Holographic Interface Developer" }
+      ]
+    },
+    {
+      "name": "Blockchain",
+      "children": [
+        { "name": "Blockchain Developer" },
+        { "name": "Smart Contract Developer" },
+        { "name": "Decentralized App (DApp) Developer" },
+        { "name": "Blockchain Security Engineer" },
+        { "name": "NFT Developer" },
+        { "name": "Decentralized Finance (DeFi) Developer" }
+      ]
+    },
+    {
+      "name": "Customization",
+      "children": [
+        { "name": "Customization Developer" },
+        { "name": "SAP Developer" },
+        { "name": "Salesforce Developer" },
+        { "name": "Shopify Developer" },
+        { "name": "Magento Developer" },
+        { "name": "WordPress Developer" },
+        { "name": "Dynamics 365 Developer" },
+        { "name": "ServiceNow Developer" },
+        { "name": "Low-Code Platform Developer" },
+        { "name": "HubSpot Developer" },
+        { "name": "Oracle NetSuite Developer" }
+      ]
+    },
+    {
+      "name": "API and Integration Development",
+      "children": [
+        { "name": "API Developer" },
+        { "name": "Integration Engineer" },
+        { "name": "Microservices Developer" },
+        { "name": "API Security Engineer" },
+        { "name": "Event-Driven Architecture Developer" },
+        { "name": "API Product Manager" }
+      ]
+    },
+    {
+      "name": "Enterprise Software Development",
+      "children": [
+        { "name": "Enterprise Software Developer" },
+        { "name": "ERP Developer" },
+        { "name": "CRM Developer" },
+        { "name": "Legacy Systems Engineer" },
+        { "name": "Mainframe Developer" },
+        { "name": "Enterprise Integration Architect" }
+      ]
+    },
+    {
+      "name": "Low-Code/No-Code Development",
+      "children": [
+        { "name": "Low-Code Developer" },
+        { "name": "No-Code Developer" },
+        { "name": "Citizen Developer" },
+        { "name": "Mendix Developer" },
+        { "name": "OutSystems Developer" }
+      ]
+    },
+    {
+      "name": "Geospatial Software Development",
+      "children": [
+        { "name": "Geospatial Software Developer" },
+        { "name": "GIS Developer" },
+        { "name": "Location-Based Services Developer" },
+        { "name": "Geospatial Data Engineer" }
+      ]
+    },
+    {
+      "name": "FinTech Software Development",
+      "children": [
+        { "name": "FinTech Developer" },
+        { "name": "Payment Systems Developer" },
+        { "name": "Trading Systems Developer" },
+        { "name": "Regulatory Tech (RegTech) Developer" }
+      ]
+    },
+    {
+      "name": "HealthTech Software Development",
+      "children": [
+        { "name": "HealthTech Developer" },
+        { "name": "Telemedicine Software Developer" },
+        { "name": "Medical Device Software Engineer" },
+        { "name": "Healthcare Data Engineer" }
+      ]
+    },
+    {
+      "name": "Other",
+      "children": [
+        { "name": "Graphics Developer" },
+        { "name": "User Interface (UI) Engineer" },
+        { "name": "Internet of Things (IoT) Engineer" },
+        { "name": "Developer Advocate" },
+        { "name": "Technical Writer (SDK/API)" },
+        { "name": "Open-Source Software Developer" },
+        { "name": "Quantum Computing Developer" },
+        { "name": "Bioinformatics Software Developer" },
+        { "name": "Research Software Engineer" }
       ]
     }
   ]
